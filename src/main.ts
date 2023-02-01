@@ -1,10 +1,9 @@
 /*
  * @Author: Humphrey humphre_ch@163.com
  * @Date: 2023-01-29 10:31:37
- * @LastEditors: Humphrey humphre_ch@163.com
- * @LastEditTime: 2023-01-30 16:34:20
- * @Description:
- * Copyright (c) 2023 by Humphrey humphre_ch@163.com, All Rights Reserved.
+ * @LastEditors: Humphrey humphrey_cn@163.com
+ * @LastEditTime: 2023-01-31 14:46:33
+ * @Description: 入口文件
  */
 import { createApp } from 'vue'
 import './assets/styles/index.less' // 引入基础样式

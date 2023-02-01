@@ -1,12 +1,15 @@
 /*
  * @Author: Humphrey humphre_ch@163.com
  * @Date: 2023-01-30 10:06:25
- * @LastEditors: Humphrey humphre_ch@163.com
- * @LastEditTime: 2023-01-30 16:33:25
+ * @LastEditors: Humphrey humphrey_cn@163.com
+ * @LastEditTime: 2023-01-31 15:50:40
  * @Description: 实例化axios，配置请求响应拦截
- * Copyright (c) 2023 by Humphrey humphre_ch@163.com, All Rights Reserved.
  */
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
+import axios, {
+  type AxiosInstance,
+  type AxiosRequestConfig,
+  // AxiosResponse,
+} from 'axios'
 
 export const axiosInstance: AxiosInstance = axios.create({
   baseURL: import.meta.env.BASE_URL,

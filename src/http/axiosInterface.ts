@@ -14,24 +14,24 @@ const http = {
    * @param url 请求地址
    * @param params 请求参数
    */
-  get(url: string, params: object, ...others: any) {
+  async get (url: string, params: object, ...others: any) {
     const config: object | any = {
       method: 'get',
-      url: url,
-      ...others,
+      url,
+      ...others
     }
     if (params) config.params = params
-    return axiosInstance(config)
+    return await axiosInstance(config)
   },
-  post(url: string, params: object, ...others: any) {
+  async post (url: string, params: object, ...others: any) {
     const config: object | any = {
       method: 'post',
-      url: url,
-      ...others,
+      url,
+      ...others
     }
     if (params) config.data = params
-    return axiosInstance(config)
-  },
+    return await axiosInstance(config)
+  }
 }
 
 export default http

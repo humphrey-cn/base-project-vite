@@ -7,26 +7,26 @@
  *
  * Copyright (c) 2023 by Humphrey humphre_ch@163.com, All Rights Reserved.
  */
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHashHistory, type RouteRecordRaw } from 'vue-router'
 
-const routes: Array<RouteRecordRaw> = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/demo', // 示例
     name: 'demo',
-    component: () =>
-      import(/* webpackChunkName: "demo" */ '../views/demo/index.vue'),
+    component: async () =>
+      await import(/* webpackChunkName: "demo" */ '../views/demo/index.vue')
   },
   {
     path: '/',
     name: 'home',
-    component: () =>
-      import(/* webpackChunkName: "home" */ '../views/home/index.vue'),
-  },
+    component: async () =>
+      await import(/* webpackChunkName: "home" */ '../views/home/index.vue')
+  }
 ]
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes,
+  routes
 })
 
 export default router

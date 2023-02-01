@@ -1,18 +1,55 @@
-# Vue 3 + TypeScript + Vite
+<!--
+ * @Author: Humphrey humphrey_cn@163.com
+ * @Date: 2023-01-31 14:06:56
+ * @LastEditors: Humphrey humphrey_cn@163.com
+ * @LastEditTime: 2023-02-01 09:51:50
+ * @Description: 项目说明文档
+-->
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+# Vue 3 + TypeScript + Vite 构建的基础项目框架
 
-## Recommended IDE Setup
+## 项目启动
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+```shell
+npm install # 安装依赖
+npm run dev # 运行项目
+npm run build # 打包项目
+npm run serve # 运行打包后的项目
+```
 
-## Type Support For `.vue` Imports in TS
+## 目录结构说明
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## 代码提交规范
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+[Git - Commit message 和 Change log 编写指南](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+**Git 每次提交代码，都要写 Commit message（提交说明），否则就不允许提交。**
+
+> Commit message 需要包括三个字段：`type`（必需）、`scope`（可选）和 `subject`（必需）
+
+- type: 用于说明 commit 的类别，只允许使用下面 7 个标识。
+
+  ```
+  feat：新功能（feature）
+  fix：修补 bug
+  docs：文档（documentation）
+  style： 格式（不影响代码运行的变动）
+  refactor：重构（即不是新增功能，也不是修改 bug 的代码变动）
+  test：增加测试
+  chore：构建过程或辅助工具的变动
+  ```
+
+- scope: 用于说明 commit 影响的范围，比如数据层、控制层、视图层等等，视项目不同而不同。
+
+- subject: 是 commit 目的的简短描述，不超过 50 个字符。
+
+> 还有一种特殊情况，如果当前 commit 用于撤销以前的 commit，则必须以 revert: 开头，后面跟着被撤销 Commit message
+
+```shell
+# 示例
+git commit # 回车
+# 进入vi编辑器，可以写多行。
+revert: feat(pencil): add xxx
+# 空一行
+This reverts commit 667ecc1654a317a13331b17617d973392f415f02.
+```

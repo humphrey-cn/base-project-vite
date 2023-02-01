@@ -25,5 +25,5 @@ dist-ssr
 
 # 排除文件
 packStats.html
-待办.txt
+待办.md
 *.zip

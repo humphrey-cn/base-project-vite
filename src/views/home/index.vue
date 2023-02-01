@@ -7,5 +7,7 @@
  * Copyright (c) 2023 by Humphrey humphre_ch@163.com, All Rights Reserved.
 -->
 <template>
-  <router-link to="demo">跳转示例</router-link>
+  <router-link to="demo">
+    跳转示例
+  </router-link>
 </template>

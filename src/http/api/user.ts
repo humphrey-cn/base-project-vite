@@ -9,12 +9,12 @@
 import http from '../axiosInterface'
 
 // 地址路径以 /api 开头，配置了代理，在上线时，需要配置 NG
-export const login = (data: object) => {
-  return http.post('/api/admin/admin/login', data)
+export const login = async (data: object) => {
+  return await http.post('/api/admin/admin/login', data)
 }
-export const login1 = (data: object) => {
-  return http.post('/api/admin/admin/login', data)
+export const login1 = async (data: object) => {
+  return await http.post('/api/admin/admin/login', data)
 }
-export const login2 = (data: object) => {
-  return http.post('/api/admin/admin/login', data)
+export const login2 = async (data: object) => {
+  return await http.post('/api/admin/admin/login', data)
 }

@@ -15,7 +15,7 @@ export const local = {
   get: (...names: string[]) => {
     let result = {} as any
     names.forEach(name => {
-      let v = localStorage.getItem(name)
+      const v = localStorage.getItem(name)
       result[name] = v && JSON.parse(v)?.v
     })
     if (names.length <= 1) {
@@ -42,7 +42,7 @@ export const local = {
     names.forEach(name => {
       localStorage.removeItem(name)
     })
-  },
+  }
 }
 
 export const session = {
@@ -54,7 +54,7 @@ export const session = {
   get: (...names: string[]): any => {
     let result = {} as any
     names.forEach(name => {
-      let v = sessionStorage.getItem(name)
+      const v = sessionStorage.getItem(name)
       result[name] = v && JSON.parse(v)?.v
     })
     if (names.length <= 1) {
@@ -81,7 +81,7 @@ export const session = {
     names.forEach(name => {
       sessionStorage.removeItem(name)
     })
-  },
+  }
 }
 
 // 页面使用示例

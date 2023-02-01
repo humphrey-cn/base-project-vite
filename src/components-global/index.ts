@@ -1,18 +1,18 @@
 /*
  * @Author: Humphrey humphre_ch@163.com
  * @Date: 2023-01-29 13:26:07
- * @LastEditors: Humphrey humphre_ch@163.com
- * @LastEditTime: 2023-01-30 14:01:08
+ * @LastEditors: Humphrey humphrey_cn@163.com
+ * @LastEditTime: 2023-02-01 09:37:51
  * @Description: 导出全局公共组件
- * Copyright (c) 2023 by Humphrey humphre_ch@163.com, All Rights Reserved. 
+ * Copyright (c) 2023 by Humphrey humphre_ch@163.com, All Rights Reserved.
  */
 
 export default (app: any) => {
-    const files = import.meta.glob('./*/index.vue', { eager: true }) as any
-    Object.keys(files).map(key => {
-        let name = key.replace(/\.|\/|index.vue/g, '')
-        app.component(`${name}-global`, files[key].default || files[key])
-    })
+  const files = import.meta.glob('./*/index.vue', { eager: true }) as any
+  Object.keys(files).map(key => {
+    const name = key.replace(/\.|\/|index.vue/g, '')
+    return app.component(`${name}-global`, files[key].default || files[key])
+  })
 }
 
 // 全局公共组件

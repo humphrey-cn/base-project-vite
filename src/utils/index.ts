@@ -10,7 +10,7 @@ export default (app: any) => {
   const files = import.meta.glob('./*.ts', { eager: true }) as any
   const utils = {} as any
   Object.keys(files).map(key => {
-    let name = key.replace(/\.|\/|ts/g, '')
+    const name = key.replace(/\.|\/|ts/g, '')
     utils[name] = files[key].default || files.default
   })
   app.config.globalProperties.$utils = utils
