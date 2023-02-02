@@ -2,7 +2,7 @@
  * @Author: Humphrey humphre_ch@163.com
  * @Date: 2023-01-29 10:31:37
  * @LastEditors: Humphrey humphrey_cn@163.com
- * @LastEditTime: 2023-02-02 10:32:21
+ * @LastEditTime: 2023-02-02 10:52:39
  * @Description: 项目配置
  */
 import { defineConfig } from 'vite'
@@ -35,7 +35,7 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
       //配置文件扩展名
       alias: {
         '@': path.resolve(__dirname, 'src'),
-        '@api': path.resolve(__dirname, 'src/http/api'),
+        api: path.resolve(__dirname, 'src/api'),
         assets: path.resolve(__dirname, 'src/assets'),
         utils: path.resolve(__dirname, 'src/utils'),
       },
