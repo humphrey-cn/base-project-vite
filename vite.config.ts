@@ -2,7 +2,7 @@
  * @Author: Humphrey humphre_ch@163.com
  * @Date: 2023-01-29 10:31:37
  * @LastEditors: Humphrey humphrey_cn@163.com
- * @LastEditTime: 2023-01-31 14:09:21
+ * @LastEditTime: 2023-02-02 10:32:21
  * @Description: 项目配置
  */
 import { defineConfig } from 'vite'
@@ -18,14 +18,16 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
     css: {
       preprocessorOptions: {
         less: {
+          // 全局导入 less 变量
+          additionalData: `@import '@/assets/styles/variable.less';`,
           // 配置全局less变量，不需要在页面单独引入了
-          modifyVars: {
-            hack: `true; @import (reference) "${path.resolve(
-              __dirname,
-              'src/assets/styles/variable.less',
-            )}";`,
-          },
-          javascriptEnabled: true,
+          // modifyVars: {
+          //   hack: `true; @import (reference) "${path.resolve(
+          //     __dirname,
+          //     'src/assets/styles/variable.less',
+          //   )}";`,
+          // },
+          // javascriptEnabled: true,
         },
       },
     },

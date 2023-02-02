@@ -1,13 +1,14 @@
+import { DefineComponent } from 'vue'
 /*
  * @Author: Humphrey humphre_ch@163.com
  * @Date: 2023-01-29 13:26:07
  * @LastEditors: Humphrey humphrey_cn@163.com
- * @LastEditTime: 2023-02-01 09:37:51
+ * @LastEditTime: 2023-02-01 14:09:11
  * @Description: 导出全局公共组件
  * Copyright (c) 2023 by Humphrey humphre_ch@163.com, All Rights Reserved.
  */
 
-export default (app: any) => {
+export default (app: DefineComponent) => {
   const files = import.meta.glob('./*/index.vue', { eager: true }) as any
   Object.keys(files).map(key => {
     const name = key.replace(/\.|\/|index.vue/g, '')

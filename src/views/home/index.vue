@@ -1,10 +1,9 @@
 <!--
  * @Author: Humphrey humphre_ch@163.com
  * @Date: 2023-01-29 11:21:08
- * @LastEditors: Humphrey humphre_ch@163.com
- * @LastEditTime: 2023-01-29 16:20:10
- * @Description:
- * Copyright (c) 2023 by Humphrey humphre_ch@163.com, All Rights Reserved.
+ * @LastEditors: Humphrey humphrey_cn@163.com
+ * @LastEditTime: 2023-02-02 10:33:14
+ * @Description: 首页
 -->
 <template>
   <router-link to="demo">

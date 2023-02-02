@@ -2,7 +2,7 @@
  * @Author: Humphrey humphrey_cn@163.com
  * @Date: 2023-01-31 14:06:56
  * @LastEditors: Humphrey humphrey_cn@163.com
- * @LastEditTime: 2023-02-01 09:51:50
+ * @LastEditTime: 2023-02-01 14:32:08
  * @Description: 项目说明文档
 -->
 
@@ -14,14 +14,83 @@
 npm install # 安装依赖
 npm run dev # 运行项目
 npm run build # 打包项目
-npm run serve # 运行打包后的项目
+npm run preview # 运行打包后的项目
 ```
 
 ## 目录结构说明
 
+```
+  |-- .husky
+  |-- .vscode
+  |   |-- extensions.json
+  |   |-- settings.json
+  |-- node_modules
+  |-- dist
+  |-- public
+  |   |-- vite.svg
+  |-- src
+      |-- App.vue
+      |-- main.ts
+      |-- vite-env.d.ts
+      |-- assets
+      |   |-- icons
+      |   |   |-- demo.png
+      |   |-- images
+      |   |   |-- demo.png
+      |   |-- styles
+      |   |   |-- base.less
+      |   |   |-- index.less
+      |   |   |-- reset.min.css
+      |   |   |-- theme.less
+      |   |   |-- variable.less
+      |   |-- svgs
+      |       |-- demo.svg
+      |-- components
+      |   |-- HelloWorld.vue
+      |-- components-global
+      |   |-- index.ts
+      |   |-- footer
+      |   |   |-- index.vue
+      |   |-- header
+      |       |-- index.vue
+      |       |-- other.vue
+      |-- config
+      |   |-- index.ts
+      |-- http
+      |   |-- axiosInterface.ts
+      |   |-- request.ts
+      |   |-- api
+      |       |-- user.ts
+      |-- layout
+      |-- plugins
+      |-- router
+      |   |-- index.ts
+      |-- store
+      |-- utils
+      |   |-- index.ts
+      |   |-- storage.ts
+      |-- views
+          |-- demo
+          |   |-- index.vue
+          |-- home
+              |-- index.vue
+      |-- .env
+          |-- .gitignore
+          |-- README.md
+          |-- commitlint.config.cjs
+          |-- index.html
+          |-- packStats.html
+          |-- package-lock.json
+          |-- package.json
+          |-- tsconfig.json
+          |-- tsconfig.node.json
+          |-- vite.config.ts
+          |-- 待办.md
+```
+
 ## 代码提交规范
 
-[Git - Commit message 和 Change log 编写指南](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
+[Git - Commit message 提交规范](https://blog.csdn.net/weixin_46652769/article/details/128828716)
 
 **Git 每次提交代码，都要写 Commit message（提交说明），否则就不允许提交。**
 
@@ -53,3 +122,7 @@ revert: feat(pencil): add xxx
 # 空一行
 This reverts commit 667ecc1654a317a13331b17617d973392f415f02.
 ```
+
+## JSX、TSX
+
+[文档](https://github.com/vuejs/babel-plugin-jsx)
