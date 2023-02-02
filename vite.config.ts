@@ -2,14 +2,20 @@
  * @Author: Humphrey humphre_ch@163.com
  * @Date: 2023-01-29 10:31:37
  * @LastEditors: Humphrey humphrey_cn@163.com
- * @LastEditTime: 2023-02-02 10:52:39
+ * @LastEditTime: 2023-02-02 14:07:42
  * @Description: 项目配置
  */
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { visualizer } from 'rollup-plugin-visualizer'
 import viteCompression from 'vite-plugin-compression'
+import { createHtmlPlugin } from 'vite-plugin-html'
 import path from 'path'
+
+//这个配置 为了在html中使用 环境变量
+const getViteEnv = (mode, target) => {
+  return loadEnv(mode, process.cwd())[target]
+}
 
 // https://vitejs.dev/config/ 配置文档
 export default defineConfig(({ command, mode, ssrBuild }) => {
@@ -47,7 +53,16 @@ export default defineConfig(({ command, mode, ssrBuild }) => {
     // 在开发环境中的独有配置
     config = {
       ...base_config,
-      plugins: [vue()],
+      plugins: [
+        vue(),
+        createHtmlPlugin({
+          inject: {
+            data: {
+              title: getViteEnv(mode, 'VITE_APP_TITLE'),
+            },
+          },
+        }),
+      ],
       server: {
         proxy: {
           // 代理配置

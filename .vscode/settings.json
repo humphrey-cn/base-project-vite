@@ -41,7 +41,7 @@
     // "custom_string_obkoro1_copyright": "Copyright (c) ${now_year} by ${git_name_email}, All Rights Reserved. "
     // "custom_string_obkoro1_copyright": "Copyright (c) ${now_year} by 写死的公司名/用户名, All Rights Reserved. "
   },
-  // 函数注释
+  // 函数注释 ctrl + cmd + t 快速生成函数注释
   "fileheader.cursorMode": {
     "description": "", // 函数注释生成之后，光标移动到这里
     "param": "", // param 开启函数参数自动提取 需要将光标放在函数行或者函数上方的空白行

@@ -2,7 +2,7 @@
  * @Author: Humphrey humphrey_cn@163.com
  * @Date: 2023-01-31 14:06:56
  * @LastEditors: Humphrey humphrey_cn@163.com
- * @LastEditTime: 2023-02-01 14:32:08
+ * @LastEditTime: 2023-02-02 13:52:45
  * @Description: 项目说明文档
 -->
 
@@ -19,74 +19,21 @@ npm run preview # 运行打包后的项目
 
 ## 目录结构说明
 
+## 环境变量
+
+[Vite](https://cn.vitejs.dev/guide/env-and-mode.html) 在一个特殊的 `import.meta.env` 对象上暴露了环境变量。有一些默认的内置变量
+
+```ts
+import.meta.env.MODE: {string} 应用运行的模式。
+import.meta.env.BASE_URL: {string} 部署应用时的基本 URL。他由 base 配置项决定。
+import.meta.env.PROD: {boolean} 应用是否运行在生产环境。
+import.meta.env.DEV: {boolean} 应用是否运行在开发环境 (永远与 import.meta.env.PROD相反)。
+import.meta.env.SSR: {boolean} 应用是否运行在 server 上。
 ```
-  |-- .husky
-  |-- .vscode
-  |   |-- extensions.json
-  |   |-- settings.json
-  |-- node_modules
-  |-- dist
-  |-- public
-  |   |-- vite.svg
-  |-- src
-      |-- App.vue
-      |-- main.ts
-      |-- vite-env.d.ts
-      |-- assets
-      |   |-- icons
-      |   |   |-- demo.png
-      |   |-- images
-      |   |   |-- demo.png
-      |   |-- styles
-      |   |   |-- base.less
-      |   |   |-- index.less
-      |   |   |-- reset.min.css
-      |   |   |-- theme.less
-      |   |   |-- variable.less
-      |   |-- svgs
-      |       |-- demo.svg
-      |-- components
-      |   |-- HelloWorld.vue
-      |-- components-global
-      |   |-- index.ts
-      |   |-- footer
-      |   |   |-- index.vue
-      |   |-- header
-      |       |-- index.vue
-      |       |-- other.vue
-      |-- config
-      |   |-- index.ts
-      |-- http
-      |   |-- axiosInterface.ts
-      |   |-- request.ts
-      |   |-- api
-      |       |-- user.ts
-      |-- layout
-      |-- plugins
-      |-- router
-      |   |-- index.ts
-      |-- store
-      |-- utils
-      |   |-- index.ts
-      |   |-- storage.ts
-      |-- views
-          |-- demo
-          |   |-- index.vue
-          |-- home
-              |-- index.vue
-      |-- .env
-          |-- .gitignore
-          |-- README.md
-          |-- commitlint.config.cjs
-          |-- index.html
-          |-- packStats.html
-          |-- package-lock.json
-          |-- package.json
-          |-- tsconfig.json
-          |-- tsconfig.node.json
-          |-- vite.config.ts
-          |-- 待办.md
-```
+
+其余环境变量在 `.env` | `.env.*` 中声明定义，使用 `import.meta.env.XXX` 去获取
+
+> 定义的每一个环境变量都需要在 `src/env.d.ts` 中声明一下类型
 
 ## 代码提交规范
 
