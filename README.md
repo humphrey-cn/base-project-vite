@@ -2,7 +2,7 @@
  * @Author: Humphrey humphrey_cn@163.com
  * @Date: 2023-01-31 14:06:56
  * @LastEditors: Humphrey humphrey_cn@163.com
- * @LastEditTime: 2023-02-02 13:52:45
+ * @LastEditTime: 2023-02-02 14:34:18
  * @Description: 项目说明文档
 -->
 
@@ -18,6 +18,62 @@ npm run preview # 运行打包后的项目
 ```
 
 ## 目录结构说明
+
+```
+|-- .husky                      husky配置，commit提交格式限制
+|-- .vscode                     vscode相关配置
+|-- public                      存放项目静态资源文件
+|-- src
+    |-- api                     存放接口文件
+    |   |-- demo.ts             使用示例
+    |-- assets                  存在项目资源文件
+    |   |-- icons               存放 Icon 文件
+    |   |   |-- demo.png
+    |   |-- images              存放 Images 文件
+    |   |   |-- demo.png
+    |   |-- styles              存放 样式 文件
+    |   |   |-- base.less       自定义项目基础样式配置
+    |   |   |-- index.less      集合导出文件
+    |   |   |-- reset.min.css   浏览器差异解决重置样式文件
+    |   |   |-- variable.less   存储 less 变量文件
+    |   |-- svgs                存放 svg 文件
+    |       |-- demo.svg
+    |-- components              组件
+    |   |-- HelloWorld.vue
+    |-- components-global       全局组件（无需在页面手动引入）
+    |   |-- index.ts            导出全局公共组件文件
+    |   |-- header              具体组件
+    |       |-- index.vue       入口文件必需以 index.vue 命名
+    |-- router                  路由
+    |   |-- index.ts            路由配置文件
+    |-- store                   状态管理
+    |   |-- index.ts            基础配置文件
+    |-- utils                   方法
+    |   |-- axiosInstance.ts    axios接口封装
+    |   |-- storage.ts          本地存储localStorage/sessionStorage方法优化增强
+    |-- views                   页面
+        |-- demo                示例
+        |   |-- index.vue
+    |-- App.vue
+    |-- env.d.ts                环境变量类型声明文件
+    |-- main.ts                 入口文件
+    |-- shims-vue.d.ts
+    |-- vite-env.d.ts
+    |-- vuex.d.ts               vuex类型声明配置文件
+|-- .env                        公共环境变量文件
+|-- .env.development            开发环境变量
+|-- .env.production             生产环境变量
+|-- .gitignore                  git忽略文件
+|-- commitlint.config.cjs       commit-lint 配置文件
+|-- index.html                  项目根文件
+|-- package-lock.json
+|-- package.json                依赖
+|-- README.md                   项目说明文件
+|-- packStats.html              打包后生成的查看包大小页面
+|-- tsconfig.json               ts配置文件
+|-- tsconfig.node.json
+|-- vite.config.ts              vite配置文件
+```
 
 ## 环境变量
 
@@ -69,7 +125,3 @@ revert: feat(pencil): add xxx
 # 空一行
 This reverts commit 667ecc1654a317a13331b17617d973392f415f02.
 ```
-
-## JSX、TSX
-
-[文档](https://github.com/vuejs/babel-plugin-jsx)
