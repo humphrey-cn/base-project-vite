@@ -2,7 +2,7 @@
  * @Author: Humphrey humphrey_cn@163.com
  * @Date: 2023-01-31 14:06:56
  * @LastEditors: Humphrey humphrey_cn@163.com
- * @LastEditTime: 2023-02-03 16:04:54
+ * @LastEditTime: 2023-02-03 16:36:06
  * @Description: 项目说明文档
 -->
 
@@ -82,6 +82,42 @@ npm run preview # 运行打包后的项目
 该项目引用的 css 预处理器是 less, 具体使用方法请查看[less 官网](http://lesscss.cn/)
 
 在页面中设置样式时，颜色、字体等，建议都使用`less变量`，less 变量在`src/assets/styles/variable.less`中设置
+
+一些组合样式，如：`button`、清除浮动、字数溢出省略、等，可以在`src/assets/styles/base.less`中设置
+
+## 关于新增路由页面
+
+在`src/views`中新建页面文件夹, 如：home，再在其内部创建 `index.vue` 文件
+
+```vue
+<!-- 示例 -->
+<template>
+  <div class="box">Home页面</div>
+  <p>{{ a }}</p>
+</template>
+<script setup lang="tsx">
+const a = '123'
+</script>
+<style lang="less" scoped>
+.box {
+  color: @text-color;
+}
+</style>
+```
+
+**挂载路由**，在`src/router/index.ts`中增加配置
+
+```ts
+// 路径需要写相对路径
+const routes: RouteRecordRaw[] = [
+  ...{
+    path: '/home',
+    name: 'home',
+    component: async () =>
+      await import(/* webpackChunkName: "home" */ '../views/home/index.vue'),
+  },
+]
+```
 
 ## 环境变量
 
