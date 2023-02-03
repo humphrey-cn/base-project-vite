@@ -2,7 +2,7 @@
  * @Author: Humphrey humphre_ch@163.com
  * @Date: 2023-01-29 16:18:37
  * @LastEditors: Humphrey humphrey_cn@163.com
- * @LastEditTime: 2023-02-02 13:01:49
+ * @LastEditTime: 2023-02-03 11:28:34
  * @Description: 示例文件
 -->
 <template>
@@ -25,9 +25,18 @@
 import { login } from 'api/demo'
 import HelloWorld from '@/components/HelloWorld.vue'
 import { useStore } from '@/store'
+import { local } from '@/utils/storage';
 
 const store = useStore()
 console.log(store.state.foo, '7777')
+
+local.set('name', 'zhangshan')
+local.set('age', 222)
+local.set('obj', { a: 1, b: '2', c: true })
+
+console.log(local.get('name'), 1)
+console.log(local.get('obj'), 2)
+console.log(local.get('name', 'age', 'obj', 'bba'), 3)
 
 login({
   username: 'admin',
