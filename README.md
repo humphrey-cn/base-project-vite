@@ -2,13 +2,15 @@
  * @Author: Humphrey humphrey_cn@163.com
  * @Date: 2023-01-31 14:06:56
  * @LastEditors: Humphrey humphrey_cn@163.com
- * @LastEditTime: 2023-02-02 14:34:18
+ * @LastEditTime: 2023-02-03 16:04:54
  * @Description: 项目说明文档
 -->
 
 # Vue 3 + TypeScript + Vite 构建的基础项目框架
 
 ## 项目启动
+
+**node 版本>=18**
 
 ```shell
 npm install # 安装依赖
@@ -74,6 +76,12 @@ npm run preview # 运行打包后的项目
 |-- tsconfig.node.json
 |-- vite.config.ts              vite配置文件
 ```
+
+## 关于样式
+
+该项目引用的 css 预处理器是 less, 具体使用方法请查看[less 官网](http://lesscss.cn/)
+
+在页面中设置样式时，颜色、字体等，建议都使用`less变量`，less 变量在`src/assets/styles/variable.less`中设置
 
 ## 环境变量
 
